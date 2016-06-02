@@ -29,7 +29,7 @@ return [
     ],
     'service-listeners' => [
         'initializers' => [
-            'Strapieno\NightClub\Model\NightClubModelInizializer'
+            'Strapieno\NightClub\Model\NightClubModelInitializer'
         ],
         'invokables' => [
             'Strapieno\Utils\Listener\InjectRouteParamsInRequest' => 'Strapieno\Utils\Listener\InjectRouteParamsInRequest',
