@@ -55,6 +55,7 @@ return [
             'api-rest' => [
                 'child_routes' => [
                     'nightclub' => [
+                        'may_terminate' => true,
                         'child_routes' => [
                             'girl' => [
                                 'type' => 'Segment',
