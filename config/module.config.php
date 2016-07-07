@@ -136,13 +136,17 @@ return [
     ],
     'zf-content-validation' => [
         'Strapieno\NightClubGirl\Api\V1\Rest\Controller' => [
-            'input_filter' => 'Strapieno\NightClubGirl\Api\InputFilter\DefaultInputFilter',
+            'input_filter' => 'Strapieno\NightClubGirl\Api\InputFilter\PostInputFilter',
         ]
     ],
     'strapieno_input_filter_specs' => [
-
-        'Strapieno\NightClubGirl\Api\InputFilter\DefaultInputFilter' => [
+        'Strapieno\NightClubGirl\Api\InputFilter\PostInputFilter' => [
             'merge' => 'Strapieno\NightClubGirl\Model\InputFilter\DefaultInputFilter',
+            'give_name' => [
+                'name' => 'give_name',
+                'require' => true,
+                'allow_empty' => false,
+            ]
         ]
     ]
 ];
