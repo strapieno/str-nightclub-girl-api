@@ -103,7 +103,7 @@ return [
                 1 => 'POST',
             ],
             'collection_query_whitelist' => [
-                'place_id'
+                'nightclub_id'
             ],
             'page_size' => 10,
             'page_size_param' => 'page_size',
@@ -140,8 +140,17 @@ return [
         ]
     ],
     'strapieno_input_filter_specs' => [
-        'Strapieno\NightClubGirl\Api\InputFilter\PostInputFilter' => [
+        'Strapieno\NightClubGirl\Api\InputFilter\DefaultInputFilter' => [
             'merge' => 'Strapieno\NightClubGirl\Model\InputFilter\DefaultInputFilter',
+            'nightclub_id' => [
+                'name' => 'Strapieno\NightClubGirl\Api\InputFilter\DefaultInputFilter',
+                'require' => true,
+                'allow_empty' => false,
+                // TODO equal to nightclub_id of route
+            ]
+        ],
+        'Strapieno\NightClubGirl\Api\InputFilter\PostInputFilter' => [
+            'merge' => 'Strapieno\NightClubGirl\Api\InputFilter\DefaultInputFilter',
             'give_name' => [
                 'name' => 'give_name',
                 'require' => true,
